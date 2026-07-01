@@ -28,6 +28,7 @@
 
     <nav class="main-nav" data-nav aria-label="Navegacion principal">
       <a href="#servicios">Servicios</a>
+      <a href="#cobertura">Cobertura</a>
       <a href="#operativa">Operativa</a>
       <a href="#confianza">Confianza</a>
       <a href="#presupuesto">Presupuesto</a>
@@ -141,25 +142,82 @@
         <div class="service-grid">
           <article class="service-card reveal">
             <span class="service-index">01</span>
-            <h3>Carga completa y rutas dedicadas</h3>
-            <p>Planificación de viajes para empresas que necesitan disponibilidad, coordinación y trato directo.</p>
+            <h3>Transporte de mercancías por carretera</h3>
+            <p>Actividad principal de la empresa: traslado profesional de cargas por vía terrestre dentro del CNAE 4941.</p>
           </article>
           <article class="service-card reveal">
             <span class="service-index">02</span>
-            <h3>Mercancía general</h3>
-            <p>Transporte por carretera para aprovisionamiento, entregas industriales y movimientos recurrentes.</p>
+            <h3>Mercancía a granel</h3>
+            <p>Servicio orientado a cargas no empaquetadas individualmente y movimientos de mayor volumen, previa validación operativa.</p>
           </article>
           <article class="service-card reveal">
             <span class="service-index">03</span>
-            <h3>Graneles y cisternas</h3>
-            <p>Soluciones para cargas de mayor especialización, sujetas a disponibilidad operativa y requisitos del servicio.</p>
+            <h3>Transporte en cisterna</h3>
+            <p>Transporte por carretera en cisterna o cuba para mercancías que requieran este tipo de vehículo, según disponibilidad y requisitos.</p>
           </article>
           <article class="service-card reveal">
             <span class="service-index">04</span>
-            <h3>Coordinación documental</h3>
-            <p>Seguimiento de recogida, entrega y documentación para reducir fricción entre cliente, carga y destino.</p>
+            <h3>Rutas dedicadas y coordinación</h3>
+            <p>Planificación de origen, destino, ventanas horarias, documentación y seguimiento para clientes profesionales.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="spain-map-section" id="cobertura" data-spain-map>
+      <canvas class="spain-map-canvas" data-spain-map-canvas aria-label="Mapa 3D de rutas de transporte por España"></canvas>
+      <div class="spain-map-fallback" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="section-inner spain-map-layout">
+        <div class="spain-map-copy reveal">
+          <p class="eyebrow">Cobertura nacional</p>
+          <h2>Un mapa vivo de rutas desde Salamanca hacia nodos clave.</h2>
+          <p>
+            La base en Cabrerizos permite presentar una operativa conectada para empresas que necesitan transporte
+            por carretera, mercancía a granel o cisterna, siempre con confirmación previa de disponibilidad y requisitos.
+          </p>
+        </div>
+
+        <div class="offer-stack reveal" aria-label="Servicios ofrecidos">
+          <article>
+            <span>01</span>
+            <div>
+              <h3>Mercancías por carretera</h3>
+              <p>Servicio principal para cargas profesionales por vía terrestre, aprovisionamiento y rutas B2B.</p>
+            </div>
+          </article>
+          <article>
+            <span>02</span>
+            <div>
+              <h3>Granel por carretera</h3>
+              <p>Solución comercial para cargas a granel o movimientos de volumen, sujeta al tipo de mercancía y ruta.</p>
+            </div>
+          </article>
+          <article>
+            <span>03</span>
+            <div>
+              <h3>Cisterna o cuba</h3>
+              <p>Transporte en vehículo cisterna para necesidades específicas, con validación previa del producto y requisitos.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="map-route-ticker" aria-hidden="true">
+        <span>Salamanca -> Madrid</span>
+        <span>Salamanca -> Barcelona</span>
+        <span>Salamanca -> Valencia</span>
+        <span>Salamanca -> Sevilla</span>
+        <span>Salamanca -> Bilbao</span>
+        <span>Salamanca -> Madrid</span>
+        <span>Salamanca -> Barcelona</span>
+        <span>Salamanca -> Valencia</span>
+        <span>Salamanca -> Sevilla</span>
+        <span>Salamanca -> Bilbao</span>
       </div>
     </section>
 
@@ -401,6 +459,7 @@
     <svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M4 7h11l5 5-5 5H4z"/><path d="M8 12h9"/></svg>
   </a>
 
+  <script type="module" src="map3d.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

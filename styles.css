@@ -620,6 +620,7 @@ textarea {
 }
 
 .section-heading h2,
+.spain-map-copy h2,
 .operations-copy h2,
 .quote-copy h2,
 .contact-copy h2,
@@ -630,6 +631,7 @@ textarea {
 }
 
 .section-heading p,
+.spain-map-copy > p,
 .operations-copy > p,
 .quote-copy > p,
 .contact-copy > p {
@@ -707,6 +709,178 @@ textarea {
 .service-card p {
   margin: 0;
   color: var(--muted);
+}
+
+.spain-map-section {
+  position: relative;
+  min-height: 820px;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  padding: 118px 42px 84px;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 58% 48%, rgba(77, 135, 165, 0.32), transparent 34%),
+    radial-gradient(circle at 24% 22%, rgba(255, 191, 0, 0.2), transparent 26%),
+    linear-gradient(145deg, #111612 0%, #202621 52%, #0c100e 100%);
+  isolation: isolate;
+}
+
+.spain-map-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(105deg, transparent 0 48%, rgba(255, 191, 0, 0.18) 49%, transparent 52%);
+  background-size: 72px 72px, 72px 72px, 360px 100%;
+  animation: routeLayerMove 18s linear infinite;
+  opacity: 0.76;
+}
+
+.spain-map-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+}
+
+.spain-map-fallback {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+
+.spain-map-section.is-fallback .spain-map-fallback {
+  opacity: 0.82;
+}
+
+.spain-map-fallback span {
+  position: absolute;
+  width: 220px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--signal-yellow), transparent);
+  box-shadow: 0 0 22px rgba(255, 191, 0, 0.72);
+  animation: fallbackRoute 4.8s ease-in-out infinite;
+}
+
+.spain-map-fallback span:nth-child(1) {
+  left: 18%;
+  top: 42%;
+  transform: rotate(-18deg);
+}
+
+.spain-map-fallback span:nth-child(2) {
+  left: 46%;
+  top: 30%;
+  transform: rotate(22deg);
+  animation-delay: 800ms;
+}
+
+.spain-map-fallback span:nth-child(3) {
+  left: 34%;
+  top: 62%;
+  transform: rotate(9deg);
+  animation-delay: 1500ms;
+}
+
+.spain-map-layout {
+  position: relative;
+  z-index: 2;
+  min-height: 620px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(360px, 0.62fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.spain-map-copy {
+  max-width: 560px;
+  text-shadow: 0 10px 34px rgba(0, 0, 0, 0.34);
+}
+
+.spain-map-copy > p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.offer-stack {
+  display: grid;
+  gap: 12px;
+}
+
+.offer-stack article {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  background: rgba(8, 10, 8, 0.56);
+  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(16px);
+}
+
+.offer-stack span {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius);
+  color: var(--ink);
+  background: var(--signal-yellow);
+  font-weight: 900;
+  box-shadow: 0 0 28px rgba(255, 191, 0, 0.34);
+}
+
+.offer-stack h3,
+.offer-stack p {
+  margin: 0;
+}
+
+.offer-stack h3 {
+  font-size: 1.1rem;
+}
+
+.offer-stack p {
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.map-route-ticker {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 22px;
+  z-index: 2;
+  display: flex;
+  width: max-content;
+  gap: 10px;
+  padding-left: 10px;
+  animation: marquee 30s linear infinite;
+}
+
+.map-route-ticker span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  color: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.07);
+  font-size: 0.78rem;
+  font-weight: 850;
+  text-transform: uppercase;
+  backdrop-filter: blur(12px);
 }
 
 .operations-section {
@@ -1349,6 +1523,19 @@ textarea {
   }
 }
 
+@keyframes fallbackRoute {
+  0%,
+  100% {
+    opacity: 0.2;
+    filter: blur(0);
+  }
+
+  50% {
+    opacity: 1;
+    filter: blur(0.2px);
+  }
+}
+
 @keyframes radarTurn {
   from {
     transform: rotate(0deg);
@@ -1385,6 +1572,7 @@ textarea {
   }
 
   .operations-layout,
+  .spain-map-layout,
   .quote-layout,
   .contact-layout,
   .advantage-layout {
@@ -1585,6 +1773,7 @@ textarea {
   }
 
   .section-heading h2,
+  .spain-map-copy h2,
   .operations-copy h2,
   .quote-copy h2,
   .contact-copy h2,
@@ -1593,6 +1782,7 @@ textarea {
   }
 
   .service-grid,
+  .offer-stack,
   .advantage-grid,
   .contact-actions,
   .quote-form {
@@ -1602,6 +1792,57 @@ textarea {
   .network-stage {
     min-height: 390px;
     transform: none;
+  }
+
+  .spain-map-section {
+    min-height: 900px;
+    align-items: start;
+    padding: 78px 18px 82px;
+  }
+
+  .spain-map-canvas {
+    height: 54%;
+    top: auto;
+    opacity: 0.88;
+  }
+
+  .spain-map-layout {
+    min-height: auto;
+    gap: 34px;
+  }
+
+  .spain-map-copy > p {
+    font-size: 1rem;
+  }
+
+  .offer-stack article {
+    grid-template-columns: 42px 1fr;
+    padding: 14px;
+  }
+
+  .offer-stack span {
+    width: 36px;
+    height: 36px;
+    font-size: 0.86rem;
+  }
+
+  .offer-stack h3 {
+    font-size: 1rem;
+  }
+
+  .offer-stack p {
+    font-size: 0.92rem;
+  }
+
+  .map-route-ticker {
+    bottom: 18px;
+    animation-duration: 24s;
+  }
+
+  .map-route-ticker span {
+    min-height: 31px;
+    padding-inline: 10px;
+    font-size: 0.66rem;
   }
 
   .network-label {
@@ -1670,6 +1911,7 @@ textarea {
   }
 
   .section-heading h2,
+  .spain-map-copy h2,
   .operations-copy h2,
   .quote-copy h2,
   .contact-copy h2,
@@ -1691,7 +1933,8 @@ textarea {
     transition-duration: 1ms !important;
   }
 
-  .motion-track {
+  .motion-track,
+  .map-route-ticker {
     animation: none !important;
   }
 }
