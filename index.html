@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Herminio Gonzalez Marquez S.L. | Transporte de mercancías por carretera</title>
+  <meta name="description" content="Herminio Gonzalez Marquez S.L., empresa de transporte de mercancías por carretera con base en Cabrerizos, Salamanca.">
+  <link rel="preload" href="assets/hero-logistics.png" as="image">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas class="ambient-canvas" id="ambientCanvas" aria-hidden="true"></canvas>
+  <div class="scroll-meter" aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="#inicio" aria-label="Herminio Gonzalez Marquez S.L.">
+      <span class="brand-mark">HG</span>
+      <span class="brand-copy">
+        <strong>Herminio Gonzalez Marquez</strong>
+        <span>S.L. Transporte</span>
+      </span>
+    </a>
+
+    <button class="menu-toggle" type="button" data-menu-toggle aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" data-nav aria-label="Navegacion principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#flota">Flota</a>
+      <a href="#cobertura">Cobertura</a>
+      <a href="#operativa">Operativa</a>
+      <a href="#confianza">Confianza</a>
+      <a href="#presupuesto">Presupuesto</a>
+      <a class="nav-cta" href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <img class="hero-image" src="assets/hero-logistics.png" alt="" decoding="async" fetchpriority="high" onerror="this.remove()">
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-motion" aria-hidden="true"></div>
+      <canvas class="hero-canvas" id="routeCanvas" aria-hidden="true"></canvas>
+
+      <div class="hero-content">
+        <p class="eyebrow">Base en Cabrerizos, Salamanca</p>
+        <h1>Herminio Gonzalez Marquez S.L.</h1>
+        <p class="hero-lead">
+          Transporte de mercancías por carretera para empresas que necesitan una operativa directa,
+          coordinada y preparada para rutas exigentes.
+        </p>
+
+        <div class="signal-rail" aria-label="Seguimiento operativo">
+          <span aria-label="Origen confirmado"><i></i>Origen</span>
+          <span aria-label="Ruta en curso"><i></i>En ruta</span>
+          <span aria-label="Entrega coordinada"><i></i>Entrega</span>
+        </div>
+
+        <div class="hero-actions" aria-label="Acciones principales">
+          <a class="button button-primary" href="#presupuesto">
+            <span>Solicitar presupuesto</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M5 12h13m-5-5 5 5-5 5"/></svg>
+          </a>
+          <a class="button button-secondary" href="#servicios">Ver servicios</a>
+        </div>
+
+        <div class="trust-strip" aria-label="Datos destacados">
+          <article>
+            <span>Actividad</span>
+            <strong>CNAE 4941</strong>
+          </article>
+          <article>
+            <span>Desde</span>
+            <strong>2021</strong>
+          </article>
+          <article>
+            <span>Capital social</span>
+            <strong>18.200 EUR</strong>
+          </article>
+          <article>
+            <span>Registro</span>
+            <strong>Salamanca</strong>
+          </article>
+        </div>
+      </div>
+
+      <aside class="route-panel" aria-label="Vista de rutas">
+        <div class="panel-topline">
+            <span>Plan de ruta</span>
+          <strong>Activo</strong>
+        </div>
+        <div class="route-orbit" aria-hidden="true">
+          <span class="orbit-dot dot-a"></span>
+          <span class="orbit-dot dot-b"></span>
+          <span class="orbit-dot dot-c"></span>
+          <span class="route-line"></span>
+        </div>
+        <div class="route-metrics">
+          <div>
+            <small>Base</small>
+            <span>Salamanca</span>
+          </div>
+          <div>
+            <small>Servicio</small>
+            <span>B2B</span>
+          </div>
+          <div>
+            <small>Mercancía</small>
+            <span>Carretera</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="motion-strip" aria-label="Estado operativo">
+      <div class="motion-track" aria-hidden="true">
+        <span>Rutas B2B</span>
+        <span>Salamanca</span>
+        <span>Carga completa</span>
+        <span>Coordinacion documental</span>
+        <span>Transporte por carretera</span>
+        <span>Rutas B2B</span>
+        <span>Salamanca</span>
+        <span>Carga completa</span>
+        <span>Coordinacion documental</span>
+        <span>Transporte por carretera</span>
+      </div>
+    </section>
+
+    <section class="fleet-motion-section" id="flota">
+      <img class="fleet-photo" src="assets/fleet-truck-coast.jpeg" alt="Camión de transporte por carretera junto a la costa" loading="lazy">
+      <div class="fleet-photo-overlay" aria-hidden="true"></div>
+      <div class="fleet-speed-lines" aria-hidden="true"></div>
+
+      <div class="section-inner fleet-motion-layout">
+        <div class="fleet-motion-copy reveal">
+          <p class="eyebrow">Flota en movimiento</p>
+          <h2>Transporte preparado para carretera, granel y cisterna.</h2>
+          <p>
+            Una presentación visual más potente para transmitir capacidad operativa, rutas coordinadas y servicio
+            profesional desde Salamanca hacia clientes que necesitan respuesta clara.
+          </p>
+          <a class="button button-primary" href="#presupuesto">
+            <span>Planificar una ruta</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M5 12h13m-5-5 5 5-5 5"/></svg>
+          </a>
+        </div>
+
+        <div class="fleet-motion-panel reveal" aria-label="Servicios destacados">
+          <span>Mercancía por carretera</span>
+          <span>Granel</span>
+          <span>Cisterna o cuba</span>
+        </div>
+      </div>
+
+      <div class="fleet-road" aria-hidden="true">
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="animated-truck" aria-hidden="true">
+        <svg viewBox="0 0 740 210" role="img">
+          <path class="truck-shadow" d="M46 174h624c24 0 44 8 44 18s-20 18-44 18H46c-24 0-44-8-44-18s20-18 44-18z"/>
+          <g class="truck-body">
+            <path d="M28 54h410c20 0 36 16 36 36v72H28z"/>
+            <path d="M474 86h96c21 0 42 12 53 31l32 55H474z"/>
+            <path d="M524 104h42c18 0 33 9 43 24l12 19h-97z"/>
+            <path d="M60 72h340v16H60z" class="truck-line"/>
+            <path d="M506 144h52" class="truck-line"/>
+            <path d="M646 160h38v12h-38z"/>
+          </g>
+          <g class="truck-wheels">
+            <g class="truck-wheel" transform="translate(142 166)">
+              <circle r="32"/>
+              <circle r="13" class="wheel-hub"/>
+              <path d="M0-25v50M-25 0h50M-18-18l36 36M18-18l-36 36" class="wheel-spokes"/>
+            </g>
+            <g class="truck-wheel" transform="translate(270 166)">
+              <circle r="32"/>
+              <circle r="13" class="wheel-hub"/>
+              <path d="M0-25v50M-25 0h50M-18-18l36 36M18-18l-36 36" class="wheel-spokes"/>
+            </g>
+            <g class="truck-wheel" transform="translate(548 166)">
+              <circle r="32"/>
+              <circle r="13" class="wheel-hub"/>
+              <path d="M0-25v50M-25 0h50M-18-18l36 36M18-18l-36 36" class="wheel-spokes"/>
+            </g>
+          </g>
+          <path class="truck-light" d="M652 152h42"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="section services-section" id="servicios">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Soluciones de transporte</p>
+          <h2>Una operativa pensada para industria, distribucion y carga profesional.</h2>
+          <p>
+            La propuesta comercial se apoya en la actividad principal de la sociedad:
+            transporte de mercancías por carretera, con enfoque B2B y gestión cercana desde Salamanca.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <span class="service-index">01</span>
+            <h3>Transporte de mercancías por carretera</h3>
+            <p>Actividad principal de la empresa: traslado profesional de cargas por vía terrestre dentro del CNAE 4941.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-index">02</span>
+            <h3>Mercancía a granel</h3>
+            <p>Servicio orientado a cargas no empaquetadas individualmente y movimientos de mayor volumen, previa validación operativa.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-index">03</span>
+            <h3>Transporte en cisterna</h3>
+            <p>Transporte por carretera en cisterna o cuba para mercancías que requieran este tipo de vehículo, según disponibilidad y requisitos.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-index">04</span>
+            <h3>Rutas dedicadas y coordinación</h3>
+            <p>Planificación de origen, destino, ventanas horarias, documentación y seguimiento para clientes profesionales.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="spain-map-section" id="cobertura" data-spain-map>
+      <canvas class="spain-map-canvas" data-spain-map-canvas aria-label="Mapa 3D de rutas de transporte por España"></canvas>
+      <div class="spain-map-fallback" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="section-inner spain-map-layout">
+        <div class="spain-map-copy reveal">
+          <p class="eyebrow">Cobertura nacional</p>
+          <h2>Un mapa vivo de rutas desde Salamanca hacia nodos clave.</h2>
+          <p>
+            La base en Cabrerizos permite presentar una operativa conectada para empresas que necesitan transporte
+            por carretera, mercancía a granel o cisterna, siempre con confirmación previa de disponibilidad y requisitos.
+          </p>
+        </div>
+
+        <div class="offer-stack reveal" aria-label="Servicios ofrecidos">
+          <article>
+            <span>01</span>
+            <div>
+              <h3>Mercancías por carretera</h3>
+              <p>Servicio principal para cargas profesionales por vía terrestre, aprovisionamiento y rutas B2B.</p>
+            </div>
+          </article>
+          <article>
+            <span>02</span>
+            <div>
+              <h3>Granel por carretera</h3>
+              <p>Solución comercial para cargas a granel o movimientos de volumen, sujeta al tipo de mercancía y ruta.</p>
+            </div>
+          </article>
+          <article>
+            <span>03</span>
+            <div>
+              <h3>Cisterna o cuba</h3>
+              <p>Transporte en vehículo cisterna para necesidades específicas, con validación previa del producto y requisitos.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="map-route-ticker" aria-hidden="true">
+        <span>Salamanca -> Madrid</span>
+        <span>Salamanca -> Barcelona</span>
+        <span>Salamanca -> Valencia</span>
+        <span>Salamanca -> Sevilla</span>
+        <span>Salamanca -> Bilbao</span>
+        <span>Salamanca -> Madrid</span>
+        <span>Salamanca -> Barcelona</span>
+        <span>Salamanca -> Valencia</span>
+        <span>Salamanca -> Sevilla</span>
+        <span>Salamanca -> Bilbao</span>
+      </div>
+    </section>
+
+    <section class="section operations-section" id="operativa">
+      <div class="section-inner operations-layout">
+        <div class="operations-copy reveal">
+          <p class="eyebrow">Operativa comercial</p>
+          <h2>Rutas claras, comunicación directa y decisiones rápidas.</h2>
+          <p>
+            Para una empresa de transporte pequeña o mediana, la ventaja no está solo en mover carga:
+            está en responder bien, coordinar sin ruido y cuidar cada fase del servicio.
+          </p>
+          <div class="process-list">
+            <article>
+              <span>01</span>
+              <div>
+                <h3>Briefing de carga</h3>
+                <p>Origen, destino, tipo de mercancia, ventanas horarias y requisitos de acceso.</p>
+              </div>
+            </article>
+            <article>
+              <span>02</span>
+              <div>
+                <h3>Planificación</h3>
+                <p>Ruta, tiempos, documentación y confirmación previa con el cliente.</p>
+              </div>
+            </article>
+            <article>
+              <span>03</span>
+              <div>
+                <h3>Transporte y entrega</h3>
+                <p>Coordinación durante el servicio y cierre con justificante o documentación acordada.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="network-stage reveal" aria-label="Mapa logistico animado">
+          <canvas id="networkCanvas" width="720" height="560" aria-hidden="true"></canvas>
+          <div class="network-label label-origin">
+            <small>Origen</small>
+            <strong>Salamanca</strong>
+          </div>
+          <div class="network-label label-load">
+            <small>Carga</small>
+            <strong>Industrial</strong>
+          </div>
+          <div class="network-label label-dest">
+            <small>Entrega</small>
+            <strong>Cliente B2B</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section proof-section" id="confianza">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Confianza y trazabilidad</p>
+          <h2>Datos corporativos que ayudan a vender con seriedad.</h2>
+          <p>
+            Los datos mercantiles de la sociedad se presentan como argumentos comerciales:
+            existencia, actividad definida, base local y evolución registrada.
+          </p>
+        </div>
+
+        <div class="proof-layout">
+          <div class="timeline reveal" aria-label="Cronologia de la empresa">
+            <article>
+              <time>2021</time>
+              <div>
+                <h3>Constitución</h3>
+                <p>Inicio de operaciones el 3 de mayo de 2021 y publicación en BORME el 20 de mayo de 2021.</p>
+              </div>
+            </article>
+            <article>
+              <time>2024</time>
+              <div>
+                <h3>Refuerzo de capital</h3>
+                <p>Ampliacion hasta 18.200 EUR, un dato util para transmitir continuidad y estructura.</p>
+              </div>
+            </article>
+            <article>
+              <time>2026</time>
+              <div>
+                <h3>Nueva administración</h3>
+                <p>Nombramiento de Alberto Gonzalez Garcia como administrador único, según publicación mercantil.</p>
+              </div>
+            </article>
+          </div>
+
+          <aside class="identity-panel reveal">
+            <p class="panel-kicker">Ficha de empresa</p>
+            <h3>Herminio Gonzalez Marquez S.L.</h3>
+            <dl>
+              <div>
+                <dt>CIF/NIF</dt>
+                <dd>B05440623</dd>
+              </div>
+              <div>
+                <dt>Domicilio</dt>
+                <dd>C/ Antonio Gala, 7, Cabrerizos, Salamanca</dd>
+              </div>
+              <div>
+                <dt>Actividad</dt>
+                <dd>Transporte de mercancías por carretera</dd>
+              </div>
+              <div>
+                <dt>Hoja registral</dt>
+                <dd>H SA 18315</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section advantage-section">
+      <div class="section-inner advantage-layout">
+        <div class="advantage-copy reveal">
+          <p class="eyebrow">Por que elegirnos</p>
+          <h2>La web vende una empresa ágil, cercana y especializada en carretera.</h2>
+        </div>
+        <div class="advantage-grid">
+          <article class="advantage-item reveal">
+            <h3>Base estratégica</h3>
+            <p>Ubicación en el entorno de Salamanca, conectada con corredores logísticos de Castilla y León.</p>
+          </article>
+          <article class="advantage-item reveal">
+            <h3>Trato directo</h3>
+            <p>Interlocución clara para empresas que prefieren resolver rápido y sin capas innecesarias.</p>
+          </article>
+          <article class="advantage-item reveal">
+            <h3>Especialización B2B</h3>
+            <p>Mensajes pensados para responsables de compras, logística, almacén y operaciones.</p>
+          </article>
+          <article class="advantage-item reveal">
+            <h3>Presencia digital nueva</h3>
+            <p>Una web moderna transforma una huella publica limitada en una marca comercial mas competitiva.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section quote-section" id="presupuesto">
+      <div class="section-inner quote-layout">
+        <div class="quote-copy reveal">
+          <p class="eyebrow">Presupuesto rápido</p>
+          <h2>Cuente su ruta y reciba una propuesta adaptada.</h2>
+          <p>
+            Comparta los datos principales de origen, destino, mercancía y fecha para preparar una respuesta comercial
+            clara desde el primer contacto.
+          </p>
+          <div class="quote-result" data-quote-result>
+            <span>Recomendacion</span>
+            <strong>Complete los datos para preparar la ruta.</strong>
+          </div>
+        </div>
+
+        <form class="quote-form reveal" data-quote-form>
+          <label>
+            <span>Origen</span>
+            <input name="origin" type="text" placeholder="Ej. Salamanca" autocomplete="address-level2">
+          </label>
+          <label>
+            <span>Destino</span>
+            <input name="destination" type="text" placeholder="Ej. Valladolid">
+          </label>
+          <label>
+            <span>Tipo de mercancía</span>
+            <select name="cargo">
+              <option value="general">Mercancía general</option>
+              <option value="granel">Granel</option>
+              <option value="cisterna">Cisterna</option>
+              <option value="industrial">Carga industrial</option>
+            </select>
+          </label>
+          <label>
+            <span>Volumen aproximado</span>
+            <select name="volume">
+              <option value="ligera">Hasta 1.000 kg</option>
+              <option value="media">1.000 - 10.000 kg</option>
+              <option value="completa">Carga completa</option>
+            </select>
+          </label>
+          <label class="wide">
+            <span>Fecha orientativa</span>
+            <input name="date" type="date">
+          </label>
+          <label class="wide">
+            <span>Notas</span>
+            <textarea name="notes" rows="4" placeholder="Horarios, acceso, ADR si aplica, requisitos de carga..."></textarea>
+          </label>
+          <button class="button button-primary wide" type="submit">
+            <span>Generar solicitud</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M5 12h13m-5-5 5 5-5 5"/></svg>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contacto">
+      <div class="section-inner contact-layout">
+        <div class="contact-copy reveal">
+          <p class="eyebrow">Contacto comercial</p>
+          <h2>Hablemos de su próxima ruta.</h2>
+          <p>
+            Atendemos solicitudes de empresas, operadores logísticos y responsables de almacén que necesitan transporte
+            por carretera con interlocución cercana.
+          </p>
+        </div>
+        <div class="contact-actions reveal">
+          <a class="contact-link" href="mailto:presupuestos@hgmtransportes.es">
+            <span>Email</span>
+            <strong>presupuestos@hgmtransportes.es</strong>
+          </a>
+          <a class="contact-link" href="tel:+34923000000">
+            <span>Telefono</span>
+            <strong>+34 923 000 000</strong>
+          </a>
+          <div class="contact-link">
+            <span>Direccion</span>
+            <strong>C/ Antonio Gala, 7, Cabrerizos</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>Herminio Gonzalez Marquez S.L.</strong>
+      <span>Transporte de mercancías por carretera desde Salamanca.</span>
+    </div>
+    <a href="#inicio">Volver arriba</a>
+  </footer>
+
+  <a class="floating-cta" href="#presupuesto" aria-label="Solicitar presupuesto">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M4 7h11l5 5-5 5H4z"/><path d="M8 12h9"/></svg>
+  </a>
+
+  <script type="module" src="map3d.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
