@@ -323,6 +323,19 @@
     const origin = data.origin?.trim() || "origen indicado";
     const destination = data.destination?.trim() || "destino indicado";
     const message = recommendation(data);
-    result.textContent = `${origin} -> ${destination}: ${message}`;
+    result.textContent = `${origin} → ${destination}: ${message}`;
+
+    const body = [
+      `Origen: ${origin}`,
+      `Destino: ${destination}`,
+      `Mercancía: ${data.cargo || ""}`,
+      `Volumen: ${data.volume || ""}`,
+      `Fecha: ${data.date || "sin indicar"}`,
+      "",
+      `Notas: ${data.notes || "-"}`
+    ].join("\n");
+
+    const subject = encodeURIComponent(`Solicitud de transporte: ${origin} → ${destination}`);
+    window.location.href = `mailto:transportesherminiogonzalez@gmail.com?subject=${subject}&body=${encodeURIComponent(body)}`;
   });
 })();
