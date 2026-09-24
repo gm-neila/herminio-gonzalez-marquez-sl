@@ -311,10 +311,9 @@
   const result = document.querySelector("[data-quote-result] strong");
 
   const recommendation = ({ cargo, volume }) => {
-    if (volume === "completa") return "Carga completa con planificación dedicada y confirmación previa de ventanas.";
-    if (cargo === "granel" || cargo === "cisterna") return "Servicio especializado sujeto a disponibilidad de equipo, autorizaciones y requisitos de carga.";
-    if (volume === "media") return "Ruta programada con coordinación documental y control de horarios.";
-    return "Servicio ligero o parcial, ideal para validar disponibilidad y consolidación.";
+    if (cargo === "ceramica") return "Ruta de cerámica con camión convencional y confirmación previa de ventanas.";
+    if (volume === "completa") return "Carga completa en camión convencional, con planificación dedicada.";
+    return "Servicio en camión de carretera, ideal para validar disponibilidad y horarios.";
   };
 
   form?.addEventListener("submit", (event) => {
