@@ -126,7 +126,7 @@
         <h1>Herminio Gonzalez Marquez S.L.</h1>
         <p class="hero-lead">
           Transporte de mercancías por carretera desde Salamanca. Especialistas en cerámica:
-          carga cuidada, rutas claras y un camión convencional de trabajo.
+          palets bien estibados, ventanas claras y trato directo.
         </p>
 
         <div class="signal-rail" aria-label="Seguimiento operativo">
@@ -176,12 +176,12 @@
       <div class="motion-track" aria-hidden="true">
         <span>Cerámica</span>
         <span>Salamanca</span>
-        <span>Camión convencional</span>
+        <span>Palets y estiba</span>
         <span>Rutas por carretera</span>
         <span>Trato directo</span>
         <span>Cerámica</span>
         <span>Salamanca</span>
-        <span>Camión convencional</span>
+        <span>Palets y estiba</span>
         <span>Rutas por carretera</span>
         <span>Trato directo</span>
       </div>
@@ -194,11 +194,12 @@
 
       <div class="section-inner fleet-motion-layout">
         <div class="fleet-motion-copy reveal">
-          <p class="eyebrow">El camión</p>
-          <h2>Un camión convencional, el de toda la vida.</h2>
+          <p class="eyebrow">El vehículo</p>
+          <h2>Un camión de carretera, sin más vueltas.</h2>
           <p>
-            Trabajamos desde Salamanca con un camión estándar de carretera. Sin cisternas ni equipos especiales:
-            carga, palets y, sobre todo, cerámica, con confirmación de disponibilidad antes de salir.
+            No hay flota de cisternas ni equipos raros: hay un camión convencional, el de siempre,
+            preparado para palets de cerámica y mercancía general. Eso da fiabilidad: misma caja,
+            misma estiba, misma forma de trabajar en cada ruta.
           </p>
           <a class="button button-primary" href="#presupuesto">
             <span>Planificar una ruta</span>
@@ -207,7 +208,7 @@
         </div>
 
         <div class="fleet-motion-panel reveal" aria-label="Servicios destacados">
-          <span>Camión convencional</span>
+          <span>Palets</span>
           <span>Cerámica</span>
           <span>Mercancía general</span>
         </div>
@@ -230,10 +231,10 @@
       <div class="section-inner">
         <div class="section-heading reveal">
           <p class="eyebrow">Soluciones de transporte</p>
-          <h2>Especialistas en cerámica, con el camión de siempre.</h2>
+          <h2>Cerámica primero. El resto, paletizado y claro.</h2>
           <p>
-            Servicio B2B de transporte por carretera desde Salamanca: interlocución directa
-            y cuidado de la carga, especialmente cerámica.
+            Servicio B2B desde Salamanca: interlocución directa y cuidado de la carga,
+            sobre todo material cerámico.
           </p>
         </div>
 
@@ -245,13 +246,13 @@
           </article>
           <article class="service-card reveal">
             <span class="service-index">02</span>
-            <h3>Mercancía general por carretera</h3>
-            <p>Cargas paletizadas y mercancía convencional en camión estándar, para empresas y almacenes.</p>
+            <h3>Mercancía general paletizada</h3>
+            <p>Cargas de almacén y distribución que caben en caja de carretera, con los mismos criterios de estiba.</p>
           </article>
           <article class="service-card reveal">
             <span class="service-index">03</span>
-            <h3>Camión convencional</h3>
-            <p>Un camión de carretera de toda la vida. No operamos cisterna, granel ni equipos especiales.</p>
+            <h3>Ventanas y documentación</h3>
+            <p>Origen, destino, horario de carga y papeles acordados antes de salir. Sin sorpresas a pie de muelle.</p>
           </article>
           <article class="service-card reveal">
             <span class="service-index">04</span>
@@ -262,46 +263,66 @@
       </div>
     </section>
 
-    <section class="spain-map-section" id="cobertura" data-spain-map>
+    <section class="spain-map-section" id="cobertura">
       <div class="section-inner spain-map-layout">
         <div class="spain-map-copy reveal">
           <p class="eyebrow">Cobertura nacional</p>
           <h2>Rutas desde Salamanca hacia nodos clave.</h2>
           <p>
-            Salimos de Salamanca hacia los destinos que pida cada carga, siempre
-            con confirmación previa de disponibilidad del camión.
+            Madrid, Levante, Andalucía o el norte: salimos de Salamanca hacia el nodo que pida
+            cada carga, con disponibilidad confirmada.
           </p>
         </div>
 
         <div class="spain-map-visual reveal">
-          <canvas class="spain-map-canvas" data-spain-map-canvas aria-label="Mapa 3D de rutas de transporte por España"></canvas>
-          <div class="spain-map-fallback" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+          <svg class="spain-map-svg" viewBox="0 0 420 340" role="img" aria-label="Rutas desde Salamanca a Madrid, Barcelona, Valencia, Sevilla y Bilbao">
+            <defs>
+              <linearGradient id="routeGlow" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#ffbf00" stop-opacity="0.15"/>
+                <stop offset="50%" stop-color="#ffbf00" stop-opacity="1"/>
+                <stop offset="100%" stop-color="#ffbf00" stop-opacity="0.2"/>
+              </linearGradient>
+            </defs>
+            <path class="spain-land" d="M78 92 C 92 58 138 42 176 38 C 214 34 248 48 278 46 C 312 44 348 58 372 86 C 392 110 398 142 386 172 C 376 198 358 214 352 236 C 346 258 328 278 298 286 C 268 294 238 278 214 282 C 188 286 168 304 142 300 C 112 296 86 274 72 246 C 58 218 48 186 52 154 C 56 122 66 104 78 92 Z"/>
+            <path class="spain-land spain-pt" d="M52 154 C 40 148 28 160 24 178 C 20 198 28 218 42 228 C 54 236 62 224 66 210 C 70 192 64 168 52 154 Z"/>
+            <g class="spain-routes">
+              <path d="M168 168 L210 176"/>
+              <path d="M168 168 L318 132"/>
+              <path d="M168 168 L292 198"/>
+              <path d="M168 168 L148 248"/>
+              <path d="M168 168 L228 108"/>
+            </g>
+            <g class="spain-cities">
+              <g transform="translate(168 168)"><circle r="7"/><circle class="pulse" r="7"/><text x="12" y="4">Salamanca</text></g>
+              <g transform="translate(210 176)"><circle r="4.5"/><text x="8" y="4">Madrid</text></g>
+              <g transform="translate(318 132)"><circle r="4.5"/><text x="-64" y="-8">Barcelona</text></g>
+              <g transform="translate(292 198)"><circle r="4.5"/><text x="8" y="4">Valencia</text></g>
+              <g transform="translate(148 248)"><circle r="4.5"/><text x="10" y="4">Sevilla</text></g>
+              <g transform="translate(228 108)"><circle r="4.5"/><text x="8" y="4">Bilbao</text></g>
+            </g>
+          </svg>
         </div>
 
         <div class="offer-stack reveal" aria-label="Servicios ofrecidos">
           <article>
             <span>01</span>
             <div>
-              <h3>Cerámica</h3>
-              <p>Rutas habituales de material cerámico para almacenes, obras y distribución.</p>
+              <h3>Centro y meseta</h3>
+              <p>Madrid y alrededores, con ventanas de muelle acordadas.</p>
             </div>
           </article>
           <article>
             <span>02</span>
             <div>
-              <h3>Camión de carretera</h3>
-              <p>Un único tipo de vehículo: el camión convencional de toda la vida.</p>
+              <h3>Levante y Cataluña</h3>
+              <p>Valencia y Barcelona para distribución de cerámica y palets.</p>
             </div>
           </article>
           <article>
             <span>03</span>
             <div>
-              <h3>Salamanca como origen</h3>
-              <p>Coordinación cercana, sin capas, para empresas que cargan o entregan en la provincia y más allá.</p>
+              <h3>Sur y norte</h3>
+              <p>Sevilla, Bilbao y el resto de península, según disponibilidad.</p>
             </div>
           </article>
         </div>
@@ -507,7 +528,6 @@
     <svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M4 7h11l5 5-5 5H4z"/><path d="M8 12h9"/></svg>
   </a>
 
-  <script type="module" src="map3d.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

@@ -1137,6 +1137,66 @@ textarea {
   pointer-events: none;
 }
 
+.spain-map-svg {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  padding: 18px 12px 8px;
+}
+
+.spain-land {
+  fill: rgba(109, 143, 78, 0.28);
+  stroke: rgba(241, 165, 31, 0.55);
+  stroke-width: 1.4;
+}
+
+.spain-pt {
+  fill: rgba(77, 135, 165, 0.18);
+  stroke: rgba(255, 255, 255, 0.18);
+}
+
+.spain-routes path {
+  fill: none;
+  stroke: url(#routeGlow);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-dasharray: 8 10;
+  animation: mapDash 18s linear infinite;
+}
+
+.spain-cities circle {
+  fill: #ffbf00;
+  stroke: #121412;
+  stroke-width: 1.5;
+}
+
+.spain-cities .pulse {
+  fill: none;
+  stroke: #ffbf00;
+  stroke-width: 1.2;
+  transform-origin: center;
+  animation: mapPulse 2.4s ease-out infinite;
+}
+
+.spain-cities text {
+  fill: #f6f8f4;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.02em;
+}
+
+@keyframes mapDash {
+  to { stroke-dashoffset: -180; }
+}
+
+@keyframes mapPulse {
+  0% { r: 7; opacity: 0.7; }
+  100% { r: 18; opacity: 0; }
+}
+
 .offer-stack {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2263,7 +2323,11 @@ textarea {
   }
 
   .spain-map-visual {
-    min-height: 390px;
+    min-height: 360px;
+  }
+
+  .spain-map-svg {
+    min-height: 360px;
   }
 
   .spain-map-copy > p {
