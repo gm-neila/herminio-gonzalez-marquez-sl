@@ -1660,6 +1660,20 @@ textarea {
   box-shadow: 0 0 0 3px rgba(241, 165, 31, 0.16);
 }
 
+.form-legal {
+  margin: 4px 0 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.form-legal a {
+  color: var(--amber);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .quote-form .wide {
   grid-column: 1 / -1;
 }
