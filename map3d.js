@@ -7,7 +7,7 @@
 
   let THREE;
   try {
-    THREE = await import("./vendor/three.module.js");
+    THREE = await import("https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js");
   } catch (error) {
     stage.classList.add("is-fallback");
     return;

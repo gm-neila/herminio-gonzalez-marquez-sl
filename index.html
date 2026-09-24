@@ -263,7 +263,7 @@
       </div>
     </section>
 
-    <section class="spain-map-section" id="cobertura">
+    <section class="spain-map-section" id="cobertura" data-spain-map>
       <div class="section-inner spain-map-layout">
         <div class="spain-map-copy reveal">
           <p class="eyebrow">Cobertura nacional</p>
@@ -275,32 +275,12 @@
         </div>
 
         <div class="spain-map-visual reveal">
-          <svg class="spain-map-svg" viewBox="0 0 420 340" role="img" aria-label="Rutas desde Salamanca a Madrid, Barcelona, Valencia, Sevilla y Bilbao">
-            <defs>
-              <linearGradient id="routeGlow" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#ffbf00" stop-opacity="0.15"/>
-                <stop offset="50%" stop-color="#ffbf00" stop-opacity="1"/>
-                <stop offset="100%" stop-color="#ffbf00" stop-opacity="0.2"/>
-              </linearGradient>
-            </defs>
-            <path class="spain-land" d="M78 92 C 92 58 138 42 176 38 C 214 34 248 48 278 46 C 312 44 348 58 372 86 C 392 110 398 142 386 172 C 376 198 358 214 352 236 C 346 258 328 278 298 286 C 268 294 238 278 214 282 C 188 286 168 304 142 300 C 112 296 86 274 72 246 C 58 218 48 186 52 154 C 56 122 66 104 78 92 Z"/>
-            <path class="spain-land spain-pt" d="M52 154 C 40 148 28 160 24 178 C 20 198 28 218 42 228 C 54 236 62 224 66 210 C 70 192 64 168 52 154 Z"/>
-            <g class="spain-routes">
-              <path d="M168 168 L210 176"/>
-              <path d="M168 168 L318 132"/>
-              <path d="M168 168 L292 198"/>
-              <path d="M168 168 L148 248"/>
-              <path d="M168 168 L228 108"/>
-            </g>
-            <g class="spain-cities">
-              <g transform="translate(168 168)"><circle r="7"/><circle class="pulse" r="7"/><text x="12" y="4">Salamanca</text></g>
-              <g transform="translate(210 176)"><circle r="4.5"/><text x="8" y="4">Madrid</text></g>
-              <g transform="translate(318 132)"><circle r="4.5"/><text x="-64" y="-8">Barcelona</text></g>
-              <g transform="translate(292 198)"><circle r="4.5"/><text x="8" y="4">Valencia</text></g>
-              <g transform="translate(148 248)"><circle r="4.5"/><text x="10" y="4">Sevilla</text></g>
-              <g transform="translate(228 108)"><circle r="4.5"/><text x="8" y="4">Bilbao</text></g>
-            </g>
-          </svg>
+          <canvas class="spain-map-canvas" data-spain-map-canvas aria-label="Mapa 3D de rutas de transporte por España"></canvas>
+          <div class="spain-map-fallback" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
 
         <div class="offer-stack reveal" aria-label="Servicios ofrecidos">
@@ -528,6 +508,7 @@
     <svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M4 7h11l5 5-5 5H4z"/><path d="M8 12h9"/></svg>
   </a>
 
+  <script type="module" src="map3d.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
