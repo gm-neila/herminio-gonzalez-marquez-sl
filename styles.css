@@ -2395,3 +2395,155 @@ textarea {
     animation: none !important;
   }
 }
+
+.site-footer .legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 22px;
+}
+
+.site-footer .legal-links a {
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.legal-page {
+  background: var(--paper);
+}
+
+.legal-page .main-nav a[href^="aviso-legal.html"],
+.legal-page .main-nav a[href^="privacidad.html"],
+.legal-page .main-nav a[href^="cookies.html"] {
+  color: var(--amber-dark);
+}
+
+.legal-hero {
+  padding: 132px 42px 36px;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.legal-hero .eyebrow {
+  margin: 0 0 10px;
+  color: var(--amber-dark);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.legal-hero h1 {
+  margin: 0 0 12px;
+  max-width: 16ch;
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  line-height: 1.05;
+}
+
+.legal-hero p,
+.legal-updated {
+  margin: 0;
+  max-width: 62ch;
+  color: var(--muted);
+}
+
+.legal-updated {
+  margin-top: 14px;
+  font-size: 0.88rem;
+}
+
+.legal-layout {
+  display: grid;
+  grid-template-columns: minmax(180px, 220px) minmax(0, 1fr);
+  gap: 42px;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 12px 42px 80px;
+}
+
+.legal-toc {
+  position: sticky;
+  top: 92px;
+  align-self: start;
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+}
+
+.legal-toc a {
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+.legal-toc a:hover,
+.legal-toc a:focus-visible {
+  color: var(--ink);
+}
+
+.legal-article {
+  display: grid;
+  gap: 28px;
+}
+
+.legal-article section {
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: var(--soft-shadow);
+}
+
+.legal-article h2 {
+  margin: 0 0 12px;
+  font-size: 1.15rem;
+}
+
+.legal-article p,
+.legal-article li {
+  color: var(--coal);
+  font-size: 0.98rem;
+}
+
+.legal-article p {
+  margin: 0 0 12px;
+}
+
+.legal-article p:last-child,
+.legal-article ul:last-child {
+  margin-bottom: 0;
+}
+
+.legal-article ul {
+  margin: 0 0 12px;
+  padding-left: 1.15rem;
+}
+
+.legal-article li + li {
+  margin-top: 6px;
+}
+
+.legal-article a {
+  color: var(--amber-dark);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 860px) {
+  .legal-hero,
+  .legal-layout {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .legal-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .legal-toc {
+    position: static;
+  }
+}
