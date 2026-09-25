@@ -63,6 +63,54 @@
 
   sections.forEach((section) => navObserver.observe(section));
 
+  const carousel = document.querySelector("[data-carousel]");
+  if (carousel) {
+    const track = carousel.querySelector("[data-carousel-track]");
+    const slides = Array.from(track?.children || []);
+    const dotsWrap = carousel.querySelector("[data-carousel-dots]");
+    const prev = carousel.querySelector("[data-carousel-prev]");
+    const next = carousel.querySelector("[data-carousel-next]");
+    let index = 0;
+    let timer = null;
+    const reduced = prefersReducedMotion;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.setAttribute("aria-label", `Ir a la foto ${i + 1}`);
+      dot.addEventListener("click", () => go(i, true));
+      dotsWrap?.appendChild(dot);
+    });
+
+    const go = (nextIndex, user) => {
+      if (!slides.length) return;
+      index = (nextIndex + slides.length) % slides.length;
+      track.style.transform = `translateX(-${index * 100}%)`;
+      Array.from(dotsWrap?.children || []).forEach((dot, i) => {
+        dot.classList.toggle("is-active", i === index);
+      });
+      if (user) play();
+    };
+
+    const stop = () => {
+      if (timer) window.clearInterval(timer);
+      timer = null;
+    };
+
+    const play = () => {
+      stop();
+      if (reduced || slides.length < 2) return;
+      timer = window.setInterval(() => go(index + 1, false), 5200);
+    };
+
+    prev?.addEventListener("click", () => go(index - 1, true));
+    next?.addEventListener("click", () => go(index + 1, true));
+    carousel.addEventListener("mouseenter", stop);
+    carousel.addEventListener("mouseleave", play);
+    go(0, false);
+    play();
+  }
+
   const setupCanvas = (canvas) => {
     const context = canvas?.getContext("2d");
     if (!canvas || !context) return null;
