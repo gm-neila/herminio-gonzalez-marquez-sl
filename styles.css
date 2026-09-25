@@ -476,56 +476,15 @@ textarea {
   margin: 20px 0;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius);
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-  background-size: 32px 32px;
   overflow: hidden;
+  background: #101410;
 }
 
-.route-orbit::before {
-  content: "";
-  position: absolute;
-  inset: 34px 44px 44px;
-  border: 1px solid rgba(241, 165, 31, 0.42);
-  border-radius: 50%;
-  transform: rotateX(62deg) rotateZ(-18deg);
-}
-
-.route-line {
-  position: absolute;
-  left: 28px;
-  top: 104px;
-  width: 218px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--amber), transparent);
-  transform: rotate(-18deg);
-}
-
-.orbit-dot {
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  border: 2px solid var(--white);
-  border-radius: 50%;
-  background: var(--amber);
-  box-shadow: 0 0 20px rgba(241, 165, 31, 0.85);
-}
-
-.dot-a {
-  left: 44px;
-  top: 104px;
-}
-
-.dot-b {
-  left: 132px;
-  top: 58px;
-  animation: pulse 1800ms ease-in-out infinite;
-}
-
-.dot-c {
-  right: 42px;
-  top: 88px;
+.route-orbit img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .route-metrics {
