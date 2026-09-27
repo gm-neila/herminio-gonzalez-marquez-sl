@@ -12,10 +12,11 @@
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const setHeaderState = () => {
+    if (!header) return;
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
     const progress = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
     header.classList.toggle("is-scrolled", window.scrollY > 24);
-    meter.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+    if (meter) meter.style.width = `${Math.min(100, Math.max(0, progress))}%`;
   };
 
   setHeaderState();
@@ -355,8 +356,25 @@
     if (!prefersReducedMotion) requestAnimationFrame(animate);
   });
 
+  const trackCta = (name) => {
+    try {
+      const key = "hgm-conversiones";
+      const log = JSON.parse(sessionStorage.getItem(key) || "[]");
+      log.push({ name, t: Date.now() });
+      sessionStorage.setItem(key, JSON.stringify(log.slice(-40)));
+    } catch (_err) {
+      /* almacenamiento no disponible */
+    }
+  };
+
+  document.querySelectorAll("[data-cta]").forEach((el) => {
+    el.addEventListener("click", () => trackCta(el.getAttribute("data-cta")));
+  });
+
   const form = document.querySelector("[data-quote-form]");
   const result = document.querySelector("[data-quote-result] strong");
+  const started = form?.querySelector("[name='form_started']");
+  if (started) started.value = String(Date.now());
 
   const recommendation = ({ cargo, volume }) => {
     if (cargo === "ceramica") return "Ruta de cerámica con camión convencional y confirmación previa de ventanas.";
@@ -367,10 +385,13 @@
   form?.addEventListener("submit", (event) => {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(form).entries());
+    if (String(data.website || "").trim()) return;
+
     const origin = data.origin?.trim() || "origen indicado";
     const destination = data.destination?.trim() || "destino indicado";
     const message = recommendation(data);
-    result.textContent = `${origin} → ${destination}: ${message}`;
+    if (result) result.textContent = `${origin} → ${destination}: ${message}`;
+    trackCta("formulario");
 
     const body = [
       `Origen: ${origin}`,

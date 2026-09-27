@@ -33,7 +33,8 @@
   <meta name="twitter:description" content="Especialistas en transporte de cerámica desde Salamanca. Camión convencional.">
   <meta name="twitter:image" content="https://herminiogonzalezmarquez.es/assets/og-image.jpg">
 
-  <link rel="preload" href="assets/hero-logistics.png" as="image" fetchpriority="high">
+  <link rel="preload" href="assets/hero-logistics.jpg" as="image" fetchpriority="high">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
@@ -54,6 +55,14 @@
     "foundingDate": "2021-05-03",
     "telephone": "+34615879926",
     "email": "transportesherminiogonzalez@gmail.com",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+34615879926",
+      "email": "transportesherminiogonzalez@gmail.com",
+      "contactType": "sales",
+      "areaServed": "ES",
+      "availableLanguage": ["es"]
+    },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "C/ Antonio Galan, 7",
@@ -119,7 +128,7 @@
 
   <main>
     <section class="hero" id="inicio">
-      <img class="hero-image" src="assets/hero-logistics.png" alt="" decoding="async" fetchpriority="high" onerror="this.remove()">
+      <img class="hero-image" src="assets/hero-logistics.jpg" alt="Transporte de cerámica por carretera desde Salamanca" decoding="async" fetchpriority="high" width="1600" height="900" onerror="this.remove()">
       <div class="hero-shade" aria-hidden="true"></div>
       <div class="hero-motion" aria-hidden="true"></div>
       <canvas class="hero-canvas" id="routeCanvas" aria-hidden="true"></canvas>
@@ -138,12 +147,11 @@
           <span aria-label="Entrega coordinada"><i></i>Entrega</span>
         </div>
 
-        <div class="hero-actions" aria-label="Acciones principales">
-          <a class="button button-primary" href="#presupuesto">
+        <div class="hero-actions" aria-label="Acción principal">
+          <a class="button button-primary" href="#presupuesto" data-cta="presupuesto">
             <span>Solicitar presupuesto</span>
             <svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M5 12h13m-5-5 5 5-5 5"/></svg>
           </a>
-          <a class="button button-secondary" href="#servicios">Ver servicios</a>
         </div>
       </div>
 
@@ -201,8 +209,8 @@
             preparado para palets de cerámica y mercancía general. Eso da fiabilidad: misma caja,
             misma estiba, misma forma de trabajar en cada ruta.
           </p>
-          <a class="button button-primary" href="#presupuesto">
-            <span>Planificar una ruta</span>
+          <a class="button button-primary" href="#presupuesto" data-cta="presupuesto">
+            <span>Solicitar presupuesto</span>
             <svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M5 12h13m-5-5 5 5-5 5"/></svg>
           </a>
         </div>
@@ -447,6 +455,11 @@
         </div>
 
         <form class="quote-form reveal" data-quote-form>
+          <input type="hidden" name="form_started" value="">
+          <label class="hp" aria-hidden="true">
+            <span>Web</span>
+            <input name="website" type="text" tabindex="-1" autocomplete="off">
+          </label>
           <label>
             <span>Origen</span>
             <input name="origin" type="text" placeholder="Ej. Salamanca" autocomplete="address-level2" required>
@@ -504,18 +517,18 @@
           </p>
         </div>
         <div class="contact-actions reveal">
-          <a class="contact-link" href="mailto:transportesherminiogonzalez@gmail.com">
+          <a class="contact-link" href="mailto:transportesherminiogonzalez@gmail.com" data-cta="email">
             <span>Email</span>
             <strong>transportesherminiogonzalez@gmail.com</strong>
           </a>
-          <a class="contact-link" href="tel:+34615879926">
+          <a class="contact-link" href="tel:+34615879926" data-cta="telefono">
             <span>Teléfono</span>
             <strong>+34 615 879 926</strong>
           </a>
-          <div class="contact-link">
+          <a class="contact-link" href="https://maps.google.com/?q=Calle+Antonio+Galan+7+Cabrerizos+Salamanca" target="_blank" rel="noopener noreferrer">
             <span>Dirección</span>
-            <strong>Salamanca</strong>
-          </div>
+            <strong>C/ Antonio Galan, 7 · Salamanca</strong>
+          </a>
         </div>
       </div>
     </section>
@@ -526,16 +539,19 @@
       <strong>Herminio Gonzalez Marquez S.L.</strong>
       <span>Transporte de cerámica desde Salamanca.</span>
     </div>
-    <nav class="legal-links" aria-label="Información legal">
+    <nav class="legal-links" aria-label="Enlaces del sitio">
+      <a href="#servicios">Servicios</a>
+      <a href="transporte-ceramica.html">Transporte de cerámica</a>
+      <a href="transporte-salamanca.html">Transporte en Salamanca</a>
+      <a href="#presupuesto">Presupuesto</a>
       <a href="aviso-legal.html">Aviso legal</a>
       <a href="privacidad.html">Privacidad</a>
       <a href="cookies.html">Cookies</a>
-      <a href="#inicio">Volver arriba</a>
     </nav>
   </footer>
 
-  <a class="floating-cta" href="#presupuesto" aria-label="Solicitar presupuesto">
-    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M4 7h11l5 5-5 5H4z"/><path d="M8 12h9"/></svg>
+  <a class="wa-float" data-cta="whatsapp" href="https://wa.me/34615879926?text=Hola%2C%20quiero%20consultar%20un%20transporte%20de%20cer%C3%A1mica" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.79 14.16c-.24.68-1.39 1.25-1.93 1.33-.49.07-1.1.1-1.78-.11-.41-.13-.94-.31-1.61-.6-2.84-1.23-4.69-4.09-4.83-4.28-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07.99-2.36.24-.26.64-.38.99-.38.12 0 .23 0 .33.01.29.01.44.03.63.49.24.56.82 2 .89 2.15.07.15.12.32.02.52-.09.19-.14.32-.27.49-.14.17-.29.38-.41.51-.14.14-.28.3-.12.58.16.28.7 1.16 1.5 1.88 1.04.93 1.91 1.22 2.2 1.36.28.13.45.11.62-.07.16-.17.7-.82.89-1.1.19-.28.37-.23.63-.14.26.09 1.64.77 1.92.91.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>
   </a>
 
   <script type="module" src="map3d.js"></script>

@@ -2,8 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://herminiogonzalezmarquez.es/</loc>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://herminiogonzalezmarquez.es/transporte-ceramica.html</loc>
+    <lastmod>2026-09-27</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://herminiogonzalezmarquez.es/transporte-salamanca.html</loc>
+    <lastmod>2026-09-27</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://herminiogonzalezmarquez.es/aviso-legal.html</loc>
