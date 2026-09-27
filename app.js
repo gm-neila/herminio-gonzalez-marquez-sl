@@ -10,6 +10,9 @@
     .filter(Boolean);
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  const slowNet = Boolean(conn && (conn.saveData || /2g|3g/i.test(conn.effectiveType || "")));
+  const skipFx = prefersReducedMotion || slowNet || window.matchMedia("(max-width: 780px)").matches;
 
   const setHeaderState = () => {
     if (!header) return;
@@ -83,9 +86,22 @@
       dotsWrap?.appendChild(dot);
     });
 
+    const hydrate = (around) => {
+      [around - 1, around, around + 1].forEach((n) => {
+        const slide = slides[(n + slides.length) % slides.length];
+        const img = slide?.querySelector("img");
+        if (!img) return;
+        const nextSrc = img.getAttribute("data-src");
+        const nextSrcset = img.getAttribute("data-srcset");
+        if (nextSrc && !img.getAttribute("src")) img.src = nextSrc;
+        if (nextSrcset && !img.getAttribute("srcset")) img.srcset = nextSrcset;
+      });
+    };
+
     const go = (nextIndex, user) => {
       if (!slides.length) return;
       index = (nextIndex + slides.length) % slides.length;
+      hydrate(index);
       track.style.transform = `translateX(-${index * 100}%)`;
       Array.from(dotsWrap?.children || []).forEach((dot, i) => {
         dot.classList.toggle("is-active", i === index);
@@ -100,7 +116,7 @@
 
     const play = () => {
       stop();
-      if (reduced || slides.length < 2) return;
+      if (reduced || slowNet || slides.length < 2) return;
       timer = window.setInterval(() => go(index + 1, false), 5200);
     };
 
@@ -118,7 +134,7 @@
 
     const resize = () => {
       const rect = canvas.getBoundingClientRect();
-      const ratio = Math.min(window.devicePixelRatio || 1, 2);
+      const ratio = Math.min(window.devicePixelRatio || 1, skipFx ? 1 : 2);
       canvas.width = Math.max(1, Math.floor(rect.width * ratio));
       canvas.height = Math.max(1, Math.floor(rect.height * ratio));
       context.setTransform(ratio, 0, 0, ratio, 0, 0);
@@ -128,9 +144,9 @@
     return { canvas, context, resize, size: resize() };
   };
 
-  const ambient = setupCanvas(document.getElementById("ambientCanvas"));
-  const hero = setupCanvas(document.getElementById("routeCanvas"));
-  const network = setupCanvas(document.getElementById("networkCanvas"));
+  const ambient = skipFx ? null : setupCanvas(document.getElementById("ambientCanvas"));
+  const hero = skipFx ? null : setupCanvas(document.getElementById("routeCanvas"));
+  const network = skipFx ? null : setupCanvas(document.getElementById("networkCanvas"));
 
   window.addEventListener("resize", () => {
     if (ambient) ambient.size = ambient.resize();

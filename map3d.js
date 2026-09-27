@@ -4,6 +4,12 @@
   if (!stage || !canvas) return;
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  const slowNet = Boolean(conn && (conn.saveData || /2g|3g/i.test(conn.effectiveType || "")));
+  if (slowNet) {
+    stage.classList.add("is-fallback");
+    return;
+  }
 
   let THREE;
   try {
