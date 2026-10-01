@@ -2101,6 +2101,64 @@ textarea {
 }
 
 @media (max-width: 1120px) {
+  .site-header {
+    gap: 12px;
+    padding: 14px 18px;
+  }
+
+  .menu-toggle {
+    display: grid;
+    place-items: center;
+    z-index: 70;
+    width: 46px;
+    height: 46px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .menu-toggle span {
+    margin: 3px 0;
+  }
+
+  .main-nav {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 4px;
+    overflow-y: auto;
+    padding: calc(84px + env(safe-area-inset-top)) 18px calc(108px + env(safe-area-inset-bottom));
+    color: var(--white);
+    background: rgba(18, 20, 18, 0.97);
+  }
+
+  body.menu-open .main-nav {
+    display: flex;
+  }
+
+  .main-nav a {
+    min-height: 52px;
+    justify-content: flex-start;
+    padding: 0 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.05rem;
+  }
+
+  .main-nav .nav-cta,
+  .main-nav .nav-login {
+    justify-content: center;
+    margin-top: 10px;
+    border-bottom: 0;
+    border-radius: var(--radius);
+  }
+
+  .main-nav .nav-login {
+    color: var(--ink);
+    background: #fff;
+  }
+
   .hero h1 {
     font-size: 3.8rem;
   }
@@ -2163,44 +2221,12 @@ textarea {
     height: 42px;
   }
 
-  .menu-toggle {
-    display: block;
-    z-index: 70;
-    width: 46px;
-    height: 46px;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-  }
-
   .brand-copy strong {
     max-width: 172px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 0.9rem;
-  }
-
-  .main-nav {
-    position: fixed;
-    inset: 0;
-    z-index: 60;
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: center;
-    padding: calc(24px + env(safe-area-inset-top)) 24px 24px;
-    color: var(--white);
-    background: rgba(18, 20, 18, 0.96);
-  }
-
-  body.menu-open .main-nav {
-    display: flex;
-  }
-
-  .main-nav a {
-    min-height: 58px;
-    justify-content: center;
-    font-size: 1.08rem;
   }
 
   .hero {

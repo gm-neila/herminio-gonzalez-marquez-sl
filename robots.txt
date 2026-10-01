@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://herminiogonzalezmarquez.es/sitemap.txt
 Sitemap: https://herminiogonzalezmarquez.es/sitemap.xml
